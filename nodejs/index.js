@@ -5,6 +5,7 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const ytdl = require('ytdl-core');
 //const { exec,spawn } = require('child_process');
 const { getYTVd } = require('./grab.jas');
+const { openPlayer } = require('./audio-support/index');
 
 (async () => {
   app.whenReady().then(() => {
@@ -21,6 +22,11 @@ const { getYTVd } = require('./grab.jas');
     });
 
     win.loadFile('grapepod-boot.html');
+
+    ipcMain.on('audio_open_player', (event, url)=>{
+      console.log("Playing audio in separate and isolated window..");
+      openPlayer(win,url);
+    });
 
     ipcMain.on('request-mainprocess-action-app', async(event, action, data) => {
       if (action === 'grab-youtube-video-search') {

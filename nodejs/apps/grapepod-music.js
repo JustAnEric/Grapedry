@@ -5,7 +5,7 @@
          * via require or <script> in the renderer process
          */
 
-const { ipcRenderer } = require('electron');
+const { ipcRenderer, app } = require('electron');
 const ytdl = require('ytdl-core');
 
 var audio;
@@ -25,11 +25,13 @@ function play() {
 }
 
 function playVideoOrAudio(ytData) {
-    audio = new Audio(ytdl.filterFormats(ytData.formats, 'audioonly')[0].url);
-    audio.load();
+    const url = ytdl.filterFormats(ytData.formats, 'audioonly')[0].url;
+    //audio = audio_module.openPlayer(app, url);
+    ipcRenderer.send('audio_open_player', url);
+    /*audio.load();
     document.body.appendChild(audio);
     audio.hidden = true;
-    audio.play();
+    audio.play();*/
     currentYtD = ytData;
 }
 
