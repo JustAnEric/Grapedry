@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="app.css">
+
+    <title>GrapeDry</title>
+</head>
+<body>
+    <div class="top-root">
+        <div class="start">
+            <!--<div class="date">Friday, Feb 12</div>-->
+            <div class="home-symb">
+                <div class="m-s-o home-icon icon">home</div>
+                <br><div class="indicator">Home</div>
+            </div>
+            <div class="app-name">Settings</div>
+        </div>
+        <div class="end">
+            <div class="notif-symb">
+                <div class="m-s-o notification-icon">notifications</div>
+                <br><div class="indicator">1</div>
+            </div>
+            <div class="bluetooth-symb">
+                <div class="m-s-o bluetooth-icon">bluetooth</div>
+                <br><div class="indicator">...</div>
+            </div>
+            <div class="battery-symb">
+                <div class="m-s-o battery-icon">battery_full</div>
+                <br><div class="indicator">100%</div>
+            </div>
+            <div class="wifi-symb">
+                <div class="m-s-o wifi-icon">wifi</div>
+                <br><div class="indicator">2.4g</div>
+            </div>
+        </div>
+    </div>
+    <div class="root">
+        <div class="main page">
+            <ul>
+                <li onclick="switchPage('wifi')">
+                    <div class="m-s-o wifi-icon">wifi</div> Wi-Fi
+                </li>
+                <li onclick="switchPage('bluetooth')">
+                    <div class="m-s-o bluetooth-icon">bluetooth</div> Bluetooth
+                </li>
+                <li onclick="switchPage('battery')">
+                    <div class="m-s-o battery-icon">battery_full</div> Battery
+                </li>
+                <li onclick="switchPage('services')">
+                    <div class="m-s-o question-mark-icon">question_mark</div> Services
+                </li>
+                <li onclick="switchPage('about')">
+                    <div class="m-s-o question-mark-icon">question_mark</div> About
+                </li>
+                <li onclick="switchPage('storage')">
+                    <div class="m-s-o storage-icon">storage</div> Storage
+                </li>
+                <li onclick="switchPage('web')">
+                    <div class="m-s-o public-network-internet-icon">public</div> Web
+                </li>
+            </ul>
+        </div>
+        <div class="wifi page" hidden style="display: none;">
+            <h3><div class="m-s-o wifi-icon">wifi</div> Wi-Fi</h3>
+            <p>Searching for networks...</p>
+            <ul>
+                <li>
+                    <div class="m-s-o check-mark-icon">check</div> <div class="m-s-o wifi-icon">wifi</div> Wi-Fi 1
+                </li>
+                <li>
+                    <div class="m-s-o wifi-icon">wifi</div> Wi-Fi 2
+                </li>
+                <li>
+                    <div class="m-s-o wifi-icon">wifi</div> Wi-Fi 3
+                </li>
+                <li>
+                    <div class="m-s-o wifi-icon">wifi</div> Wi-Fi 4
+                </li>
+            </ul>
+        </div>
+        <div class="bluetooth page" hidden style="display: none;">
+            <h3><div class="m-s-o bluetooth-icon">bluetooth</div> Bluetooth</h3>
+            <p>Searching for devices...</p>
+            <ul>
+                <li>
+                    <div class="m-s-o check-mark-icon">check</div> <div class="m-s-o bluetooth-icon">bluetooth</div> Device 1
+                </li>
+                <li>
+                    <div class="m-s-o bluetooth-icon">bluetooth</div> Device 2
+                </li>
+                <li>
+                    <div class="m-s-o bluetooth-icon">bluetooth</div> Device 3
+                </li>
+                <li>
+                    <div class="m-s-o bluetooth-icon">bluetooth</div> Device 4
+                </li>
+            </ul>
+        </div>
+        <div class="battery page" hidden style="display: none;">
+            <h3><div class="m-s-o battery-icon">battery_full</div> Battery</h3>
+        </div>
+        <div class="services page" hidden style="display: none;">
+
+        </div>
+        <div class="about page" hidden style="display: none;">
+
+        </div>
+        <div class="storage page" hidden style="display: none;">
+
+        </div>
+        <div class="web page" hidden style="display: none;">
+
+        </div>
+    </div>
+
+    <div class="bottom-root">
+        <div class="middle">
+        </div>
+    </div>
+
+    <script src="./grapepod-app.js">
+        const appConfig = {
+            appIdentifier: 'x.grape.Grape.Settings',
+            appName: "Settings",
+            path: './settings.html',
+            appIcon: 'x.no-icon--$(unencoded);',
+            version: '1.0.0.0'
+        }
+    </script>
+
+    <style>
+        .root ul > * {
+            list-style-type: none;
+            background: whitesmoke;
+            width: calc(100% - 24px);
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding-inline-start: 0;
+            padding: 4px 0px;
+            padding-left: 24px;
+            margin-bottom: 1px;
+            cursor: pointer;
+        }
+        .root ul {
+            width: 100%;
+            margin-block-end: 0;
+            padding-inline-start: 0;
+        }
+        /*.root ul > *:hover, */
+        .root ul > li:hover {
+            background: #ddd;
+        }
+
+        *.page {
+            width: 100%;
+        }
+    </style>
+</body>
+</html>

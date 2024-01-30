@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>GrapeDry</title>
+</head>
+<body>
+    <div class="top-root">
+        <div class="start">
+            <div class="date">Friday, Feb 12</div>
+        </div>
+        <div class="end">
+            <div class="notif-symb">
+                <div class="m-s-o notification-icon">notifications</div>
+                <br><div class="indicator">1</div>
+            </div>
+            <div class="bluetooth-symb">
+                <div class="m-s-o bluetooth-icon">bluetooth</div>
+                <br><div class="indicator">...</div>
+            </div>
+            <div class="battery-symb">
+                <div class="m-s-o battery-icon">battery_full</div>
+                <br><div class="indicator">100%</div>
+            </div>
+            <div class="wifi-symb">
+                <div class="m-s-o wifi-icon">wifi</div>
+                <br><div class="indicator">2.4g</div>
+            </div>
+        </div>
+    </div>
+    <div class="root">
+        <h1 class="time">19:43</h1>
+    </div>
+
+    <div class="bottom-root">
+        <div class="start">
+            <div class="wifi-symb" onclick="openApp('settings')">
+                <div class="m-s-o settings-icon icon">settings</div>
+                <br><div class="indicator">Settings</div>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="wifi-symb">
+                <div class="m-s-o wifi-icon icon">wifi</div>
+                <br><div class="indicator">GrapeAI</div>
+            </div>
+        </div>
+        <div class="end">
+            <div class="wifi-symb" onclick="openApp('music')">
+                <div class="m-s-o music-note-icon icon">music_note</div>
+                <br><div class="indicator">&nbsp;Music</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./grapepod-ui.js"></script>
+</body>
+</html>

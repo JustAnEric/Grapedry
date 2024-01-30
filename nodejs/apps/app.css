@@ -1,0 +1,187 @@
+@import url(../mat-symbols-outline.css);
+
+body {
+    margin: 0 auto;
+    padding: 0 auto;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+html {
+    margin: 0 auto;
+    padding: 0 auto;
+    height: 100%;
+    background: #ccc /*linear-gradient(-50deg, #0091ff, purple) cut out due to usability issues*/;
+}
+
+.root {
+    width: 100%;
+    height: calc(100% - 29px);
+    display: flex;
+    padding-top: 29px;
+    overflow-y: scroll auto;
+}
+
+.top-root {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.top-root .start {
+    display: flex;
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    justify-content: flex-start;
+}
+
+.top-root .end {
+    display: flex;
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    justify-content: flex-end;
+}
+
+.top-root .end div {
+    margin-left: 1px;
+}
+
+/*top root icons*/
+
+.top-root .start .home-symb .indicator {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transform: translateX(-5px) translateY(-8px);
+    font-size: 11px;
+    user-select: none;
+    color: black;
+}
+
+.top-root .end .wifi-symb .indicator {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transform: translateX(0px) translateY(-8px);
+    font-size: 11px;
+    user-select: none;
+    color: greenyellow;
+}
+
+.top-root .end .battery-symb .indicator {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transform: translateX(-3px) translateY(-7.5px);
+    font-size: 11px;
+    user-select: none;
+    color: orange;
+}
+
+.top-root .end .bluetooth-symb .indicator {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transform: translateX(5px) translateY(-7.5px);
+    font-size: 11px;
+    user-select: none;
+    color: transparent;
+}
+
+.top-root .end .notif-symb .indicator {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transform: translateX(6px) translateY(-7.5px);
+    font-size: 11px;
+    user-select: none;
+    color: red;
+}
+
+/*end top root*/
+
+.bottom-root {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/*.bottom-root .start {
+    display: flex;
+    position: absolute;
+    bottom: 4px;
+    left: 30px;
+    justify-content: flex-start;
+}
+
+.bottom-root .middle {
+    display: flex;
+    text-align: center;
+}
+
+.bottom-root .end {
+    display: flex;
+    position: absolute;
+    bottom: 4px;
+    right: 30px;
+    justify-content: flex-end;
+}*/
+
+.bottom-root > * {
+    margin-left: 7px;
+    cursor: pointer;
+}
+
+.bottom-root * .indicator {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transform: translateX(-8px) translateY(-47.5px);
+    user-select: none;
+    font-size: 11px;
+    color: turquoise;
+}
+
+.bottom-root * .icon {
+    font-size: 25px;
+}
+
+.app-name {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #555;
+    user-select: none;
+    margin-top: 4px;
+    margin-left: 2px;
+}
+
+/*app content support*/
+/* alrigth what to we need to work on, gimme something i need to find something to use for youtube music thing you want me to illegally download some youtube videos and put them here no, we can use spotify api lame spotify api doesnt work can you make the ui for the music app and i will figure out how to do the logic stuff? sure where should the music app directory be just in the same one as this, correct?*/
+ul {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: scroll auto;
+    /*margin-top: 2px;*/
+}
+
+.root .page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+    padding-left: 5px;
+    margin: 0;
+}
+
+h3 {
+    margin: 0;
+}
+
+/* example so i dont forget lol
+<div class="root">
+<div id="main-page">
+    <header>Music</header>
+    <!--Display music list-->
+    <div class="music">
+        <div  class="song-artist song-name">Song Name - Artist Name</div>
+        <div class="playlist-controls"></div>
+        {add more songs here as we goo}
+    </div>
+</div>
