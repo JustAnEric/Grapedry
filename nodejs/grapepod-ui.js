@@ -1,4 +1,5 @@
 const timeElement = document.querySelector('h1.time');
+const dateElement = document.querySelector('.date');
 var t24hrf = 0;
 const root = document.querySelector('.root');
 
@@ -19,6 +20,16 @@ setInterval(function() {
     var mins = (new Date().getMinutes() < 10) ? "0" + new Date().getMinutes() : new Date().getMinutes();
 
     timeElement.innerHTML = hours + ":" + mins + "" + ampm;
+
+    const weekdays = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+    var month = (new Date().getMonth());
+    var year = (new Date().getFullYear());
+    var day = (new Date().getDay());
+    var dayname = weekdays[day];
+    var monthnum = (new Date().getDate());
+    dateElement.innerHTML = `${dayname}, ${months[month]} ${monthnum}`;
 }, 1000);
 //hopefully that workslol
 
